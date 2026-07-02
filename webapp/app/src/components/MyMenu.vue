@@ -7,8 +7,6 @@ div
       .scale-label High (1.0)
       .scale-bar
       .scale-label Low (0.0)
-  .ui.container#welcome-container(v-if="showWelcome" data-intro="Welcome to our web application. Here you can explore how body size impacts urban tolerance across the tree of life.")
-    h1#masthead 
 </template>
 
 <script>

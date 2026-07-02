@@ -51,7 +51,25 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [
+          resolve('src'),
+          resolve('test'),
+          resolve('node_modules/camelcase'),
+          resolve('node_modules/infobox-parser')
+        ],
+        options: {
+          babelrc: false,
+          presets: [
+            ['env', {
+              modules: 'commonjs',
+              targets: {
+                browsers: ['> 1%', 'last 2 versions', 'not ie <= 8']
+              }
+            }],
+            'stage-2'
+          ],
+          plugins: ['transform-runtime']
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
